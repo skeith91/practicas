@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;   /* centra horizontal */
+    align-items: center;       /* centra vertical */
+    min-height: 100vh;
+    background: #f0f0f0;       /* fondo gris solo en pantalla */
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+  }
+
+    main {
+    margin-top: 10mm;
+    margin-bottom: 10mm;    
+    width: 210mm;    /* Ancho A4 */
+    height: 297mm;   /* Alto A4 */
+    background: white;
+    padding: 20mm;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  header, section, footer {
+    margin-bottom: 5px;
+  }
+
+  h3{
+    color: blue;
+  }
+
+   
+    section h2 {
+    margin-top: 0;
+    color: green;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+  }
+
+  footer {
+    text-align: left;
+    font-size: 12px;
+    color: gray;
+  }
+
+  @media print {
+    body {
+      background: white;
+      display: block;
+    }
+    main {
+      margin: auto;
+      box-shadow: none;
+    }
+  }
