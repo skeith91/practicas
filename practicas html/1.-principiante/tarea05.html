@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+        <form action="#" method="post" style="max-width: 300px; margin: 100px auto;">
+            <label for="nombre">nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Ingresar tu nombre">
+            <br><br>
+            <label for="email">email</label>
+            <input type="email" name="email" id="email" placeholder="Ingresar tu correo" required>
+            <br><br>
+            <label for="pass">contraseña</label>
+            <input type="password" name="pass" id="pass" placeholder="Ingresar la contraseña" maxlength="10">
+            <label for="alimentos">alimentos:</label>
+            <select name="alimentos" id="alimentos" >
+               <option value="tacos">Tacos</option>
+               <option value="quesadillas">Quesadillas</option>
+               <option value="pozole">pozole</option> 
+            </select>
+            <input type="number" name="cantidad" id="cantidad" min="1" required>
+            <br><br>
+
+            <div id="infoProducto" style="margin-top: 20px;"></div>
+
+            <input type="submit" name="enviar" id="enviar">
+        </form>
+
+        <script>
+        // Datos de los alimentos (precio e imagen)
+        const alimentosData = {
+            tacos: {
+                precio: 25,
+                imagen: "img/tacos.jpg"
+            },
+            quesadillas: {
+                precio: 20,
+                imagen: "img/quesadillas.jpg"
+            },
+            pozole: {
+                precio: 35,
+                imagen: "img/pozole.jpg"
+            }
+        };
+
+        const selectAlimentos = document.getElementById("alimentos");
+        const infoProducto = document.getElementById("infoProducto");
+
+        selectAlimentos.addEventListener("change", function() {
+            const valor = this.value;
+            if (valor && alimentosData[valor]) {
+                const { precio, imagen } = alimentosData[valor];
+                infoProducto.innerHTML = `
+                    <p><strong>Precio:</strong> $${precio} MXN</p>
+                    <img src="${imagen}" alt="${valor}" width="150">
+                `;
+            } else {
+                infoProducto.innerHTML = "";
+            }
+        });
+    </script>
+    
+</body>
+</html>

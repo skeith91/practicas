@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>DOM Demo</title></head>
+<body>
+  <h1 id="titulo">Título original</h1>
+  <button id="cambiar">Cambiar título</button>
+  <ul id="lista"></ul>
+  <button id="agregar">Agregar item</button>
+
+  <script>
+    const titulo = document.getElementById("titulo");
+    const btnCambiar = document.getElementById("cambiar");
+    const btnAgregar = document.getElementById("agregar");
+    const lista = document.getElementById("lista");
+
+    btnCambiar.addEventListener("click", () => {
+      titulo.textContent = "Título cambiado con JS";
+      titulo.style.color = "blue";
+    });
+
+    btnAgregar.addEventListener("click", () => {
+      const li = document.createElement("li");
+      li.textContent = "Nuevo item";
+      lista.appendChild(li);
+    });
+  </script>
+</body>
+</html>

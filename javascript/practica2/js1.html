@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pactica 2</title>
+    <script>
+    
+    /* primer ejercicio
+    let numero = Number(prompt("escribe el numero a multiplicar: "));
+    for(let i = 1;i<=10;i++){
+
+        let tabla = numero * i;
+        console.log(`${numero} x ${i} : ${tabla}`);
+
+    }*/
+
+    /*segundo ejerecicio
+
+    function saludar(nombre) {
+    return `Hola, ${nombre}`;
+    }
+
+let persona = prompt("Escribe tu nombre:");
+console.log(saludar(persona));*/
+
+/* tercer ejercicio
+
+function veri(a,b){
+    if(a>b){
+        return `a es mayor (${a}) que b (${b}) `;
+    }else{
+        return `b es mayor (${b}) que a (${a}) `;
+    }
+}
+
+let a = Number(prompt("escribe el numero a: "));
+let b = Number(prompt("escribe el numero b: "));
+console.log(veri(a,b));*/
+
+/* ejercicio 2
+function area(a){
+
+    let ar = a*a;
+
+    return `el area es: ${ar}cm²`;
+
+}
+
+console.log(area(5));*/
+
+
+/*ejercicio 3
+function par(x){
+
+    let result = x%2;
+
+    if(result == 0){
+        return `este numero es par: ${x}`;
+    }else{
+        return `este numero es impar: ${x}`;
+    }
+
+}
+
+console.log(par(5));*/
+
+
+/*ejercicio 4
+
+function fact(num){
+
+    
+    let cont = 1;
+
+    for(let i = 1;i<=num;i++){
+
+    cont *= i;
+
+    
+
+    }
+
+    return cont;      
+
+}
+
+console.log(fact(4));*/
+
+/*ejercicio 5
+
+let v = "aeiou";
+let contador = 0;
+function vocal(texto){
+
+    for(let i = 0;i<texto.length;i++){
+
+        if(v.includes(texto[i])){
+            contador++;
+        }
+
+    }
+    return contador;
+
+}
+
+console.log(vocal("hola"));*/
+
+/*ejercicio 6
+
+function esPrimo(numero) {
+  // Los números menores o iguales a 1 no son primos.
+  if (numero <= 1) {
+    return "no es primo";
+  }
+  // 2 es el único número primo par.
+  if (numero === 2) {
+    return "es primo";
+  }
+  // Los números pares mayores que 2 no son primos.
+  if (numero % 2 === 0) {
+    return "no es primo";
+  }
+  // Iteramos desde 3, solo por impares, hasta la raíz cuadrada del número.
+  for (let i = 3; i * i <= numero; i += 2) {
+    if (numero % i === 0) {
+      return "no es primo"; // Se encontró un divisor, no es primo.
+    }
+  }
+  // Si no se encontró ningún divisor, es primo.
+  return "es primo";
+}
+console.log(esPrimo(18));*/
+
+/*ejercicio 7
+    
+function pali(palabra){
+
+    let frase = palabra.split("").reverse().join("");
+
+    if(frase == palabra){
+
+        return `la palabra "${palabra}" es un palindromo`;
+
+    }else{
+
+        return `la palabra "${palabra}" no es un palindromo`;
+    }
+
+    
+
+}    
+    
+    console.log(pali("otto"));*/
+
+/* ejercicio 8
+
+function conv(grados){
+
+    let far = grados * 1.8 + 32;
+
+    return `${grados} grados celsius son equivalente a ${far} grados Fahrenheit`;
+
+}
+    
+console.log(conv(50));*/
+
+
+/* ejercicio extra*/
+
+function numeroAletras(numero){
+
+const unidad = ["cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve"];
+const esp = ["diez","once","doce","trece","catorce","quince"];
+const decena = ["cero","cero","veinte","treinta","cuarenta","cincuenta","sesenta","setenta","ochenta","noventa"];
+const esp1 = ["cero","dieci","veinti"];   
+const centena = ["cien","docientos","trecientos","cuatrocientos","quinientos","seicientos","sietecientos","ochocientos","novecientos"];
+let control = numero;
+let control2 = "";
+let moneda = "";
+let y = "y";
+if(numero <= 1){
+    moneda = "peso";
+}else{
+    moneda = "pesos";
+}
+
+
+if(numero <= 9){
+
+    if(numero == 1){
+        return `${unidad[numero].slice(0,-1)} ${moneda}`;
+    }else{
+    return `${unidad[numero]} ${moneda}`;
+    }
+}else if(numero >= 10 && numero <=15){
+    
+    
+    return `${esp[control.toString().slice(1)]} ${moneda}`;
+}else if(numero >= 16 && numero <= 19){
+
+    return `${esp1[control.toString().slice(0,-1)]}${unidad[control.toString().slice(1)]} ${moneda} `;
+}else if(numero == 20 ){
+    return `${decena[control.toString().slice(0,-1)]} ${moneda} `;
+}else if(numero >= 21 && numero <=29){
+
+    return `${esp1[control.toString().slice(0,-1)]}${unidad[control.toString().slice(1)]} ${moneda} `;
+
+}else if(numero >= 30){
+    
+    if(numero.toString().includes("0")){
+    
+        return `${decena[control.toString().slice(0,-1)]} ${moneda} `;
+    
+    }else if(numero.toString().includes("1")){
+        return `${decena[control.toString().slice(0,-1)]} ${y} ${unidad[control.toString().slice(1)].slice(0,-1)} ${moneda} `;
+    }else{
+        return `${decena[control.toString().slice(0,-1)]} ${y} ${unidad[control.toString().slice(1)]} ${moneda} `;
+    }    
+}
+
+}
+console.log(numeroAletras(21));
+
+ 
+
+    </script>
+</head>
+<body>
+    <h1>hola</h1>
+    <button id="btn">Click</button>
+</body>
+</html>

@@ -1,0 +1,80 @@
+  /* ===== Variables & Reset ===== */
+  :root{
+    --bg: #0f172a;         /* fondo general */
+    --panel: #111827;      /* tarjetas y paneles */
+    --panel-2: #0b1220;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #6366f1;
+    --ok: #22c55e;
+    --warn: #f59e0b;
+    --bad: #ef4444;
+    --radius: 14px;
+    --gap: 16px;
+  }
+
+      *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+  .layout{
+    min-height: 100dvh;
+    display: flex;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main";
+  }
+ /* header*/ 
+    header{
+    grid-area: header;
+    position: sticky; top: 0; z-index: 10;
+    background: linear-gradient(180deg, #0b1220, #0b122000);
+    backdrop-filter: blur(6px);
+  }
+  .header-wrap{
+    width: 1100px; margin: 0 auto; padding: 8px 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;border: 2px solid; float: right;
+  }
+  .brand{font-weight: 800; letter-spacing:.2px;}
+
+
+  .topbar{display:flex;align-items:center;gap:12px;padding:10px 14px;background: linear-gradient(180deg, #0b1220, #0b122000);}
+    .spacer{flex:1}
+    .user-menu{position:relative}
+    .user-menu summary{list-style:none;display:flex;align-items:center;gap:8px;cursor:pointer}
+    .user-menu summary::-webkit-details-marker{display:none}
+    .avatar{color: white; font-weight: 800; margin-left:  800px;}
+    .caret{font-size:.9rem;opacity:.8}
+
+/* dropdown */
+.dropdown{
+  position:absolute; right:0; top:calc(100% + 8px);
+  background:#fff; color:#111; min-width:180px; padding:6px;
+  border:1px solid #e5e7eb; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,.12);
+  display:flex; flex-direction:column; gap:4px; z-index:50;
+  list-style: none;
+}
+.dropdown a, .dropdown button{
+  display:block; width:100%; text-align:left; padding:10px 12px;
+  border-radius:8px; text-decoration:none; color:#111; background:transparent; border:0; cursor:pointer;
+}
+.dropdown a:hover, .dropdown button:hover{background:#f3f4f6}
+.user-menu[open] summary{outline:2px solid transparent}
+
+/* aside*/
+
+    aside{
+    /*grid-area: sidebar;*/
+    /*border-right: 1px solid #1f2937;*/
+    /*background: var(--panel-2);
+    padding: 16px;
+    position: sticky; top: 20px; height: calc(100dvh - 80px); overflow:auto;
+    border: 2px solid;
+    margin-top: -20px;*/
+
+    width: 250px;
+  background: #333;
+  color: white;
+  padding: 20px;
+  }

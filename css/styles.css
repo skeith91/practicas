@@ -1,0 +1,30 @@
+    body {
+      margin: 0;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #f6f7f9;
+    }
+
+    .caja {
+      width: 300px;
+      height: 300px;
+      background: #3b82f6; /* azul */
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.15);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 600;
+      letter-spacing: .3px;
+    }
+
+    /* En pantallas < 600px, la caja ocupa 50% del ancho */
+    @media (max-width: 600px) {
+      .caja {
+        width: 50vw;          /* 50% del ancho de la ventana */
+        height: auto;         /* deja de forzar altura fija */
+        aspect-ratio: 1 / 1;  /* se mantiene cuadrada */
+      }
+    }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasboard2</title>
+    
+    <style>
+        .layout {
+  display: flex;
+  height: 100vh; /* toda la pantalla */
+}
+
+aside {
+  width: 250px;
+  background: #333;
+  color: white;
+  padding: 20px;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #555;
+  color: white;
+  padding: 20px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background: #f4f4f4;
+  overflow: auto; /* permite scroll */
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="layout">
+  <aside>Menú lateral</aside>
+  <div class="content">
+    <header>Header</header>
+    <main>Contenido principal</main>
+  </div>
+</div>
+
+
+    </div>
+</body>
+</html>

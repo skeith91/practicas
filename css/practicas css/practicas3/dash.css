@@ -1,0 +1,130 @@
+  /* ===== Variables & Reset ===== */
+  :root{
+    --bg: #0f172a;         /* fondo general */
+    --panel: #111827;      /* tarjetas y paneles */
+    --panel-2: #0b1220;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #6366f1;
+    --ok: #22c55e;
+    --warn: #f59e0b;
+    --bad: #ef4444;
+    --radius: 14px;
+    --gap: 16px;
+  }
+
+    *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+  /* ===== Layout principal con Grid Areas ===== */
+  .app{
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main";
+  }
+
+  header{
+    grid-area: header;
+    position: sticky; top: 0; z-index: 10;
+    background: linear-gradient(180deg, #0b1220, #0b122000);
+    border-bottom: 1px solid #1f2937;
+    backdrop-filter: blur(6px);
+  }
+    .header-wrap{
+    max-width: 1200px; margin: 0 auto; padding: 12px 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }  
+  .brand{font-weight: 800; letter-spacing:.2px}
+  .actions{display:flex; gap:10px}
+
+  .btn{
+    padding: 8px 12px; border-radius: 10px; border:1px solid #1f2937;
+    background: var(--panel); color: var(--text); cursor: pointer;
+  }
+  .btn.primary{background: var(--accent); border-color: transparent}
+
+    aside{
+    grid-area: sidebar;
+    border-right: 1px solid #1f2937;
+    background: var(--panel-2);
+    padding: 16px;
+    position: sticky; top: 56px; height: calc(100dvh - 56px); overflow:auto;
+  }
+
+  .nav-title{font-size:.9rem; color:var(--muted); margin-bottom:8px}
+  .nav{list-style:none; padding:0; margin:0; display:grid; gap:6px}
+  .nav a{
+    display:block; padding:10px 12px; border-radius:10px; color:var(--text);
+    text-decoration:none; border:1px solid #1f2937; background: #0f1629;
+    transition: transform .12s ease, background .2s;
+  }
+
+   .nav a:hover{ background:#17223a; transform: translateY(-1px) }
+  .nav a.active{ background:#1b2552; border-color:#283354 }
+
+    main{
+    grid-area: main;
+    padding: 16px;
+  }
+
+  .container{max-width:1200px; margin:0 auto; display:grid; gap: var(--gap);}
+
+    /* ===== Tarjetas (stats) ===== */
+  .grid-cards{
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+   /* 3 tarjetas principales en desktop: 4/12 cada una */
+  .card{ background: var(--panel); border:1px solid #1f2937; border-radius: var(--radius); padding:16px }
+  .stat{ grid-column: span 4; display:flex; flex-direction:column; gap:10px }
+  .stat .label{ color: var(--muted); font-size:.9rem }
+  .stat .value{ font-size:1.8rem; font-weight:800 }
+  .trend{font-size:.85rem}
+  .up{ color: var(--ok) } .down{ color: var(--bad) } .warn{ color: var(--warn) }
+  /* ===== Grids secundarios ===== */
+  .grid-2{
+    display:grid; gap: var(--gap); grid-template-columns: 1.2fr 1fr;
+  }
+  /* ===== Tabla simple ===== */
+
+  .table{
+    width:100%; border-collapse: collapse; overflow: hidden; border-radius: var(--radius);
+  }
+
+   .table th, .table td{
+    padding:12px; border-bottom:1px solid #1f2937; text-align:left; font-size:.95rem;
+  }
+
+  .table th{ color: var(--muted); font-weight:600; background:#0f1629 }
+.table tr:hover td{ background:#0b1220 }
+  /* ===== Widget progreso ===== */
+  .progress{
+    display:flex; flex-direction:column; gap:10px;
+  }
+
+    .bar{
+    height: 10px; background:#0b1220; border-radius: 999px; overflow:hidden; border:1px solid #1f2937;
+  }
+   .bar > i{
+    display:block; height:100%; width:50%; background: linear-gradient(90deg, #4754ff, #7a98ff);
+  }
+
+   /* ===== Cards responsivas ===== */
+  @media (max-width: 1024px){
+    body{background-color: #22c55e;}
+    .stat{ grid-column: span 6; }
+    .grid-2{ grid-template-columns: 1fr; }
+  }
+
+   @media (max-width: 640px){
+    body{background-color: red;}
+    .app{ grid-template-columns: 1fr; grid-template-areas:
+      "header" "sidebar" "main"; }
+    aside{ position: static; height:auto }
+    .stat{ grid-column: span 12; }
+  } 

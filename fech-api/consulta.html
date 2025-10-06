@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta con Fetch y MySQL</title>
+</head>
+<body>
+  <h2>Usuarios</h2>
+  <ul id="lista"></ul>
+
+  <script>
+    async function cargarUsuarios() {
+      const res = await fetch("http://localhost/practice/fech-api/api.php");
+      const data = await res.json();
+
+      let lista = document.getElementById("lista");
+      lista.innerHTML = "";
+
+      data.forEach(users => {
+        let li = document.createElement("li");
+        li.textContent = `${users.id} - usuario: ${users.user}---nombre: ${users.nombre}---
+        correo:${users.email}`;
+        lista.appendChild(li);
+      });
+    }
+
+    cargarUsuarios();
+  </script>
+</body>
+</html>

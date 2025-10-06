@@ -1,0 +1,97 @@
+<head>
+  <style>
+    .done { text-decoration: line-through; color: gray; } /* tarea completada */
+.del  { margin-left: 10px; color: red; cursor: pointer; } /* botón eliminar */
+  </style>
+</head>
+
+<h1 id="titulo">Texto original</h1>
+<button id="cambiar">Cambiar texto</button>
+<br>
+<hr>
+<p>Contador: <span id="num">0</span></p>
+<button id="sumar">+</button>
+<button id="restar">-</button>
+<hr>
+
+  <h2>Lista dinámica</h2>
+  <input id="tarea" placeholder="Escribe una tarea">
+  <button id="agregar">Agregar</button>
+  <ul id="lista"></ul>
+
+<script>
+  /*const array = ["hola","como","estan","bienvenidos","todos","ustedes"];  
+  let textos = 0;
+  const titulo = document.getElementById("titulo");
+  const btn = document.getElementById("cambiar");
+
+  btn.addEventListener("click", () => {
+    titulo.textContent = array[textos];
+    textos++;
+    if(textos >= array.length){
+        textos =0;
+    }
+  });*/
+
+  /* const array = ["red","blue","orange","yellow","purple","green"];  
+  let textos = 0;
+  const titulo = document.getElementById("titulo");
+  const btn = document.getElementById("cambiar");
+
+  btn.addEventListener("click", () => {
+    titulo.style.backgroundColor = array[textos];
+    textos++;
+    if(textos >= array.length){
+        textos =0;
+    }
+  });
+
+    let contador = 0;
+  const span = document.getElementById("num");
+
+  document.getElementById("sumar").addEventListener("click", () => {
+    contador++;
+    span.textContent = contador;
+  });
+
+  document.getElementById("restar").addEventListener("click", () => {
+    contador--;
+    span.textContent = contador;
+  });*/
+
+  
+const inp = document.getElementById("tarea");
+    const ul  = document.getElementById("lista");
+    const btn = document.getElementById("agregar");
+
+    // Agregar tarea
+    btn.addEventListener("click", () => {
+      const texto = inp.value.trim();
+      if (texto === "") return;
+
+      // Crear <li>
+      const li = document.createElement("li");
+      li.textContent = texto;
+
+      // Botón eliminar
+      const del = document.createElement("span");
+      del.textContent = "❌";
+      del.className = "del";
+      li.appendChild(del);
+
+      ul.appendChild(li);
+      inp.value = "";
+      inp.focus();
+    });
+
+    // Delegación de eventos: marcar/eliminar
+    ul.addEventListener("click", (e) => {
+      if (e.target.tagName === "LI") {
+        e.target.classList.toggle("done"); // marcar tarea
+      }
+      if (e.target.classList.contains("del")) {
+        e.target.parentElement.remove(); // eliminar tarea
+      }
+    });
+
+</script>

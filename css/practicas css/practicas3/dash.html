@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+<link rel="stylesheet" href="dash.css">
+</head>
+<body>
+    <div class="app">
+  <!-- HEADER -->
+  <header>
+    <div class="header-wrap">
+      <div class="brand">📊 Mi Dashboard</div>
+      <div class="actions">
+        <button class="btn">Exportar</button>
+        <button class="btn primary">Nuevo</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SIDEBAR -->
+  <aside>
+    <div class="nav-title">Navegación</div>
+    <ul class="nav">
+      <li><a class="active" href="#">Resumen</a></li>
+      <li><a href="#">Ventas</a></li>
+      <li><a href="#">Inventario</a></li>
+      <li><a href="#">Clientes</a></li>
+      <li><a href="#">Reportes</a></li>
+      <li><a href="#">Configuración</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main>
+    <div class="container">
+
+      <!-- Tarjetas de KPIs -->
+      <section class="grid-cards">
+        <article class="card stat">
+          <div class="label">Ingresos (hoy)</div>
+          <div class="value">$ 12,450</div>
+          <div class="trend up">▲ +8.4% vs ayer</div>
+        </article>
+
+        <article class="card stat">
+          <div class="label">Órdenes</div>
+          <div class="value">326</div>
+          <div class="trend warn">● Estable (0.3%)</div>
+        </article>
+
+        <article class="card stat">
+          <div class="label">Carritos abandonados</div>
+          <div class="value">47</div>
+          <div class="trend down">▼ -2.1% (mejor)</div>
+        </article>
+      </section>
+
+      <!-- Dos columnas: tabla + progreso/actividad -->
+      <section class="grid-2">
+        <article class="card">
+          <h3 style="margin:0 0 10px">Ventas recientes</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Folio</th><th>Cliente</th><th>Fecha</th><th>Total</th><th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>#A-1023</td><td>Ana López</td><td>2025-08-28</td><td>$1,240</td><td>Pagada</td></tr>
+              <tr><td>#A-1022</td><td>Comercial MX</td><td>2025-08-28</td><td>$8,320</td><td>Pagada</td></tr>
+              <tr><td>#A-1021</td><td>Juan Pérez</td><td>2025-08-27</td><td>$560</td><td>Pendiente</td></tr>
+              <tr><td>#A-1020</td><td>Nova SA</td><td>2025-08-27</td><td>$3,100</td><td>Pagada</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="card">
+          <h3 style="margin:0 0 10px">Objetivos del mes</h3>
+          <div class="progress">
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.9rem;color:var(--muted)">
+                <span>Meta de ingresos</span><span>72%</span>
+              </div>
+              <div class="bar"><i style="width:72%"></i></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.9rem;color:var(--muted)">
+                <span>Nuevos clientes</span><span>54%</span>
+              </div>
+              <div class="bar"><i style="width:54%"></i></div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;font-size:.9rem;color:var(--muted)">
+                <span>Tasa de conversión</span><span>39%</span>
+              </div>
+              <div class="bar"><i style="width:39%"></i></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+    </div>
+  </main>
+</div>
+    
+</body>
+</html>

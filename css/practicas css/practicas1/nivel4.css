@@ -1,0 +1,75 @@
+ /* ===== Reset básico ===== */
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, Arial, sans-serif; line-height: 1.4; }
+
+  /* ===== Página a pantalla completa con footer al fondo ===== */
+  .page {
+    min-height: 100dvh;            /* altura mínima viewport, compatible móvil */
+    display: flex;
+    flex-direction: column;
+  }
+
+  header, footer {
+    background: #333;
+    color: #fff;
+    padding: 16px;
+  }
+
+  header h1, footer p { margin: 0; }
+
+  /* ===== Área principal ===== */
+  main {
+    flex: 1;                       /* empuja el footer hacia abajo si hay poco contenido */
+    padding: 16px;
+  }
+
+  /* ===== Layout de dos columnas con Flex ===== */
+  .layout {
+    display: flex;
+    gap: 16px;                     /* espacio entre columnas */
+    align-items: stretch;          /* que ambas columnas tengan la misma altura visual */
+  }
+
+  /* Columna izquierda: menú (sidebar) */
+  nav.sidebar {
+    flex: 0 0 220px;               /* ancho fijo: 220px (no crece, no se encoge) */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    background: #f7f7f9;
+  }
+
+  nav.sidebar h2 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+  }
+  nav.sidebar ul {
+    list-style: none; margin:0; padding:0;
+  }
+  nav.sidebar li a {
+    display: block;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 6px;
+    transition: background .25s ease;
+  }
+  nav.sidebar li a:hover { background: #e9e7ff; }
+
+  /* Columna derecha: contenido */
+  section.content {
+    flex: 1 1 auto;                /* toma todo el espacio restante */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+    min-width: 0;                  /* evita overflow en flex items */
+  }
+
+  /* ===== Responsivo: en pantallas pequeñas, columnas apiladas ===== */
+  @media (max-width: 768px) {
+    .layout {
+      flex-direction: column;      /* apila sidebar y contenido */
+    }
+    nav.sidebar { flex-basis: auto; }
+  }

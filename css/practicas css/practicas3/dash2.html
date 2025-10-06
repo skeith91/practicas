@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasboard2</title>
+    <link rel="stylesheet" href="dash2.css">
+</head>
+<body>
+    <div class="layout">
+<!--    header    -->
+        <header>
+            <div class="header-wrap">
+                <!--<div class="brand">nombre de empresa</div>-->
+                <div class="custom-user">
+                    <nav class="topbar">
+                        <div class="spacer"></div>
+
+                        <details class="user-menu">
+                            <summary aria-haspopup="menu">
+                                <span class="avatar">juan pablo</span>
+                                <span class="caret">▾</span>
+                            </summary>
+
+                            <ul class="dropdown" role="menu" aria-label="Menú de usuario">
+                                <li><a role="menuitem" href="/perfil">Ver perfil</a></li>
+                                <li>
+                                    <form method="POST" action="/logout">
+                                    <button type="submit" role="menuitem">Cerrar sesión</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </details>
+                    </nav>
+                </div>
+            </div>
+        </header>
+<!--   aside    -->
+  <aside>
+    <div class="nav-title">Navegación</div>
+    <ul class="nav">
+      <li><a class="active" href="#">Resumen</a></li>
+      <li><a href="#">Ventas</a></li>
+      <li><a href="#">Inventario</a></li>
+      <li><a href="#">Clientes</a></li>
+      <li><a href="#">Reportes</a></li>
+      <li><a href="#">Configuración</a></li>
+    </ul>
+  </aside>
+
+    </div>
+</body>
+</html>

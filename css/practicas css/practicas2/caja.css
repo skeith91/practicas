@@ -1,0 +1,15 @@
+.content{
+    display: flex;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.caja {
+    
+    
+    border: 2px solid;
+    width: 100px;
+    text-align: center;
+    padding: 50px;
+}

@@ -1,0 +1,95 @@
+  /* ===== Base ===== */
+  :root { --bg:#333; --fg:#fff; --hover:#6c3bd9; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, Arial, sans-serif; }
+
+  nav {
+    background: var(--bg);
+    color: var(--fg);
+  }
+
+  /* Contenedor del nav */
+  .nav-wrap{
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  /* Marca / logo */
+  .brand{
+    font-weight: 800;
+    letter-spacing: .3px;
+  }
+
+  /* Lista principal */
+  .menu{
+    list-style: none;
+    margin:0; padding:0;
+    display: flex;
+    gap: 18px;
+  }
+
+  .menu a{
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background .25s ease;
+  }
+  .menu a:hover{ background: var(--hover); }
+
+  /* ===== Botón hamburguesa ===== */
+  .toggle{
+    display: none;           /* oculto en desktop */
+    font-size: 1.4rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+  .toggle:hover{ background: rgba(255,255,255,.12); }
+
+  /* Checkbox oculto que controla el despliegue */
+  #navcheck { display:none; }
+
+  /* ===== Responsive < 768px ===== */
+  @media (max-width: 768px){
+    .nav-wrap{
+      align-items: center;
+    }
+
+    .toggle{ display: block; }
+
+    /* Menú en columna y oculto por defecto */
+    .menu{
+      position: static;
+      display: none;        /* oculto inicialmente */
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      margin-top: 8px;
+      border-top: 1px solid rgba(255,255,255,.15);
+    }
+
+    .menu li a{
+      display: block;
+      padding: 12px 10px;
+      border-radius: 0;
+    }
+
+    /* Cuando el checkbox está marcado, mostramos el menú */
+    #navcheck:checked ~ .menu{
+      display: flex;
+      animation: drop .18s ease-out;
+    }
+
+    @keyframes drop{
+      from{ transform: translateY(-6px); opacity: .6; }
+      to  { transform: translateY(0);    opacity: 1;  }
+    }
+  }

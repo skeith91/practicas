@@ -1,0 +1,13 @@
+.galeria {
+  display: flex;          /* activa Flexbox */
+  flex-wrap: wrap;        /* permite que los elementos “brinquen” a otra fila */
+  gap: 10px;              /* espacio entre las imágenes */
+  justify-content: center;/* opcional: centra las filas */
+}
+
+.galeria img {
+  width: 150px;           /* ancho fijo de cada imagen */
+  height: 150px;          /* alto fijo (o auto si quieres proporción) */
+  object-fit: cover;      /* recorta imagen sin deformarla */
+  border-radius: 8px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Fetch API</title>
+</head>
+<body>
+  <h2>Formulario con Fetch</h2>
+
+  <!-- Formulario -->
+  <form id="miFormulario">
+    <input type="text" id="titulo" placeholder="Título" required><br><br>
+    <textarea id="contenido" placeholder="Contenido" required></textarea><br><br>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <h3>Respuesta del servidor:</h3>
+  <pre id="respuesta"></pre>
+
+  <script>
+    const formulario = document.getElementById("miFormulario");
+    const respuesta = document.getElementById("respuesta");
+
+    formulario.addEventListener("submit", async (e) => {
+      e.preventDefault(); // evita recargar la página
+
+      // Tomar los datos del formulario
+      const datos = {
+        title: document.getElementById("titulo").value,
+        body: document.getElementById("contenido").value,
+        userId: 1
+      };
+
+      try {
+        // Petición con fetch
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(datos)
+        });
+
+        // Convertir la respuesta a JSON
+        const data = await res.json();
+
+        // Mostrar la respuesta en la página
+        respuesta.textContent = JSON.stringify(data, null, 2);
+
+      } catch (error) {
+        respuesta.textContent = "Error: " + error;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.content{
+
+      
+  grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
+  gap: 10px; /* Opcional: espacio entre las cajas */
+  display: inline-block;
+}
+
+.caja{
+
+    border: 2px solid;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.caja1{
+
+    background-color: red;
+}
+.caja2{
+
+    background-color: blue;
+}
+.caja3{
+    background-color: green;
+}

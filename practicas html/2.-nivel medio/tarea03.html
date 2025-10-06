@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    
+</head>
+<body>
+    
+        <form action="#" method="post" style="max-width: 300px; margin: 100px auto;">
+            <fieldset>
+            <legend>daros personales</legend>
+            <label for="nombre" style="font-size: 200px; font-family: 'Courier New', Courier, monospace; color: blue;">nombre</label>
+            <input type="text" name="nombre" id="nombre" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñ]+(\s+[A-Za-zÁÉÍÓÚÑáéíóúñ]+)+$" placeholder="Ingresar tu nombre">
+            <br><br>
+            <label for="email">email</label>
+            <input type="email" name="email" id="email" placeholder="Ingresar tu correo" required>
+            <br><br>
+            <label for="edad">edad</label>
+            <input type="number" name="edad" id="edad" placeholder="Ingresar tu edad" maxlength="10">
+            <br>
+            <label for="fechaN">Fecha de nacimiento</label>
+            <input type="date" name="fechaN" id="fechaN">
+            <label for="tel">celular</label>
+            <input type="text" name="tel" id="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="351-325-7485">
+            <br>
+            <label for="ciudad">Ciudad</label>
+            <input list="ciudad-lista" name="ciudad" id="ciudad">
+            <datalist id="ciudad-lista">
+                <option value="colima"></option>
+                <option value="manzanillo"></option>
+                <option value="armeria"></option>    
+            </datalist>
+            </fieldset>
+            <br>
+            <fieldset>
+            <legend>Color Favorito</legend>
+            <label for="color1">negro</label>
+            <input type="radio" name="grupo" id="color1">
+            <label for="color2">azul</label>
+            <input type="radio" name="grupo" id="color2">
+            <label for="color3">verde</label>
+            <input type="radio" name="grupo" id="color3">
+            </fieldset>
+            <br>
+            <fieldset>
+            <legend>Tipo de carro</legend>
+            <label for="carro1">chevi</label>
+            <input type="checkbox" name="carro1" id="carro1">
+            <label for="carro2">duster</label>
+            <input type="checkbox" name="carro2" id="carro2">
+            </fieldset>
+            <br>
+            <fieldset>
+            <legend>frutas y verduras</legend>
+            <label for="alimentos">frutas y verduras:</label>
+            <select name="alimentos" id="alimentos" >
+               <optgroup>
+                <optgroup label="frutas">
+                <option value="manzana">manzana</option>
+                <option value="banana">banana</option>
+                <option value="naranja">naranja</option>
+               </optgroup>
+               <optgroup>
+                <optgroup label="verduras">
+                <option value="jitomate">jitomate</option>
+                <option value="zanahoria">zanahoria</option>
+                <option value="brocoli">brocoli</option>
+               </optgroup> 
+            </select>
+            <br>
+            <label for="cant">cuantas necesitas</label>
+            <input type="number" name="cant" id="cant" step="5" min="0" max="100">
+            </fieldset>
+            <fieldset>
+                <legend>Comentarios</legend>
+                <textarea name="com" id="com" maxlength="200" placeholder="aqui puedes poner tus comentatios"></textarea>
+            </fieldset>
+            <br><br>
+
+           
+
+            <button type="submit">Enviar</button>
+            <button type="button">Reiniciar</button>
+        </form>
+
+
+
+
+    
+</body>
+</html>
